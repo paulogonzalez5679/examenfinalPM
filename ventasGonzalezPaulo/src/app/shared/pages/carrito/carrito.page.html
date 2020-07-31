@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Carrito</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+    <ion-list>
+        <ion-list-header>
+            Prodcutos
+        </ion-list-header>
+
+        <ion-item *ngFor="let producto of prod">
+
+            <ion-label>
+                <h3 style="color: rgb(26, 236, 71)">{{producto.nombre}}</h3>
+                <p style="color: rgb(26, 236, 71)">{{producto.descripcion}}</p>
+                <p style="color: rgb(26, 236, 71)">{{producto.precio}}</p>
+
+            </ion-label>
+
+        </ion-item>
+    </ion-list>
+    <ion-button (click)='atras()'>regresar </ion-button>
+    <ion-button (click)='borrar()'>borrar </ion-button>
+    <ion-button (click)='call()'>Llamar al local</ion-button>
+</ion-content>

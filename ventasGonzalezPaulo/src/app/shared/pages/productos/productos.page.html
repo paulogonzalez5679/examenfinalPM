@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>prodcutos</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+    <ion-list>
+        <ion-list-header>
+            tienda
+        </ion-list-header>
+
+        <ion-item *ngFor="let producto of productos | async trackBy: trackByFn">
+
+            <ion-label>
+                <ion-img [src]="producto.imagen"></ion-img>
+                <h3 style="color: rgb(26, 236, 71)">{{producto.nombre}}</h3>
+                <p style="color: rgb(26, 236, 71)">{{producto.descripcion}}</p>
+                <p style="color: rgb(26, 236, 71)">{{producto.precio}}</p>
+                <ion-button (click)=' agregarCarrito(producto)'>Agregar al carrito</ion-button>
+            </ion-label>
+
+        </ion-item>
+    </ion-list>
+    <ion-button (click)='carrito()'>Ver Carrito </ion-button>
+</ion-content>
